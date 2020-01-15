@@ -1,0 +1,22 @@
+server:
+  port: 8010
+spring:
+  profiles:
+    active: @profileActive@
+  application:
+    name: USER-PROVIDER
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: true
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 11000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 11000

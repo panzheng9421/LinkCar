@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: @profileActive@
+  application:
+    name: USER-WEB
+server:
+  port: 8100
+  maxHttpHeaderSize: 1024000  #单位byte,最大请求头数据大小，默认是8k
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+  instance:
+    prefer-ip-address: true
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 11000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 11000

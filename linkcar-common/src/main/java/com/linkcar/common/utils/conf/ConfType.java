@@ -1,0 +1,1 @@
+package com.linkcar.common.utils.conf;/** * 版权：Copyright xxx. All Rights Reserved. * 描述详情: XXXX * 创建者： Z·Shuai * 创建时间：2018/8/7 10:30 */public enum  ConfType {    WxinConf_Test,    WxinConf_Pro}

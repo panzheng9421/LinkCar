@@ -1,0 +1,78 @@
+spring:
+  profiles:
+    active: @profileActive@
+
+---
+# 开发环境
+spring:
+  profiles: dev
+  application:
+    name: EUREKA
+eureka:
+  client:
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+server:
+  port: 7001
+
+---
+# 测试环境
+spring:
+  profiles: test
+  application:
+    name: EUREKA
+eureka:
+  client:
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://172.26.67.102:7001/eureka/
+server:
+  port: 7001
+
+---
+#生产环境 集群01
+spring:
+  profiles: prod01
+  application:
+    name: EUREKA
+eureka:
+  client:
+    register-with-eureka: true     #false表示不向注册中心注册自己。
+    fetch-registry: true     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://172.22.76.53:7001/eureka/,http://172.22.76.59:7001/eureka/
+server:
+  port: 7001
+
+---
+#生产环境 集群02
+spring:
+  profiles: prod02
+  application:
+    name: EUREKA
+eureka:
+  client:
+    register-with-eureka: true     #false表示不向注册中心注册自己。
+    fetch-registry: true     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://172.22.76.52:7001/eureka/,http://172.22.76.59:7001/eureka/
+server:
+  port: 7001
+
+---
+#生产环境 集群03
+spring:
+  profiles: prod03
+  application:
+    name: EUREKA
+eureka:
+  client:
+    register-with-eureka: true     #false表示不向注册中心注册自己。
+    fetch-registry: true     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://172.22.76.52:7001/eureka/,http://172.22.76.53:7001/eureka/
+server:
+  port: 7001
