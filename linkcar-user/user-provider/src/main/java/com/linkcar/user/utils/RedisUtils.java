@@ -1,8 +1,8 @@
-package com.linkcar.common.utils;
+package com.linkcar.user.utils;
 
+import com.linkcar.common.utils.RedisConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
